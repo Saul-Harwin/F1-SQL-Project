@@ -1,6 +1,4 @@
--- =========================
 -- CLEAN REBUILD
--- =========================
 DROP TABLE IF EXISTS results CASCADE;
 DROP TABLE IF EXISTS drivers CASCADE;
 DROP TABLE IF EXISTS races CASCADE;
@@ -11,10 +9,8 @@ DROP TABLE IF EXISTS drivers_stage CASCADE;
 DROP TABLE IF EXISTS races_stage CASCADE;
 DROP TABLE IF EXISTS constructors_stage CASCADE;
 
--- =========================
--- STAGING TABLES (RAW INGESTION)
--- =========================
-
+-- STAGING TABLES
+-- Staging tables for cleaning of data before inserting the data into my tables.
 CREATE TABLE drivers_stage (
   driver_id TEXT,
   driver_ref TEXT,
@@ -77,10 +73,8 @@ CREATE TABLE results_stage (
   status_id TEXT
 );
 
--- =========================
--- CLEAN RELATIONAL TABLES
--- =========================
-
+-- RELATIONAL TABLES
+-- A clean way of tabling the data so that we don't have duplicated data storage.
 CREATE TABLE drivers (
   driver_id INT PRIMARY KEY,
   name TEXT,
