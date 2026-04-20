@@ -29,6 +29,7 @@ GROUP BY d.name
 ORDER BY points_per_race DESC
 LIMIT 50;
 
+-- Average Finishing Position
 SELECT
   r.season,
   d.name,
